@@ -5,3 +5,4 @@ master was here
 =======
 Здесь был Вася!
 >>>>>>> vasya
+luck was here
