@@ -1,0 +1,8 @@
+Hola, mundo!
+master was here
+<<<<<<< HEAD
+Здесь был Петя!
+=======
+Здесь был Вася!
+>>>>>>> vasya
+luck was here
