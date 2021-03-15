@@ -20,3 +20,12 @@ def running_light_or_dark(count,period,state):
     for number in range(count):
         line_up_or_down(PINS[number%len(PINS)],period,not state)
         GPIO.output(PINS[number%len(PINS)],state)
+
+def dec_to_binList(dec_number):
+    answer=str(bin(dec_number))[2:]
+    answer=answer.zfill(len(PINS))
+    A=[]
+    for i in answer:
+        A.append(int(i))
+    return A
+
