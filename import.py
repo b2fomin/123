@@ -50,5 +50,17 @@ def running_pattern(pattern,direction,count,period):
         else:
             A=A[1:]+[A[0]]
         time.sleep(period)
-        print(A)
+
+def f(led_number,freq):
+    GPIO.setup(PINS,GPIO.OUT)
+    GPIO.output(PINS,False)
+    p=GPIO.PWM(led_number,freq)
+    p.start(0)
+    for dc in range(0,101,5):
+        p.ChangeDutyCycle(dc)
+        time.sleep(0.1)
+    for dc in range(100,-1,-5):
+        p.ChangeDutyCycle(dc)
+        time.sleep(0.1)
+    p.stop()
 
