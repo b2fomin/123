@@ -9,6 +9,8 @@ def line_up(led_number,period):
     time.sleep(period)
     GPIO.output(led_number,False)
 
-
-
-line_up(PINS[2],2)
+def blink(led_number,blink_count,blink_period):
+    GPIO.setup(led_number,GPIO.OUT)
+    for _ in range(blink_count):
+        line_up(led_number,blink_period)
+        time.sleep(blink_period)
