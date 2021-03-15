@@ -29,3 +29,13 @@ def dec_to_binList(dec_number):
         A.append(int(i))
     return A
 
+def light_number(number):
+    GPIO.setup(PINS,GPIO.OUT)
+    GPIO.output(PINS,False)
+    A=list(reversed(dec_to_binList(number)))
+    print(A)
+    for i in range(len(A)):
+        if A[i]==1:
+            GPIO.output(PINS[i],True)
+
+
