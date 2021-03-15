@@ -33,9 +33,22 @@ def light_number(number):
     GPIO.setup(PINS,GPIO.OUT)
     GPIO.output(PINS,False)
     A=list(reversed(dec_to_binList(number)))
-    print(A)
     for i in range(len(A)):
         if A[i]==1:
             GPIO.output(PINS[i],True)
 
+def running_pattern(pattern,direction,count,period):
+    GPIO.setup(PINS,GPIO.OUT)
+    A=list(reversed(dec_to_binList(pattern)))
+    for _ in range(count):
+        GPIO.output(PINS,False)
+        for i in range(len(A)):
+            if A[i]==1:
+                GPIO.output(PINS[i],True)
+        if direction=="left":
+            A=[A[-1]]+A[:-1]
+        else:
+            A=A[1:]+[A[0]]
+        time.sleep(period)
+        print(A)
 
